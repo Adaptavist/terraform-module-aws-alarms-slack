@@ -1,25 +1,17 @@
 import axios from 'axios';
 import {Callback, Context, SNSEvent} from "aws-lambda";
 import {SNSEventRecord} from "aws-lambda/trigger/sns";
-import {WebAPICallResult} from "@slack/web-api";
-import {ChatPostMessageArguments} from "@slack/web-api/dist/methods";
 
-const {WebClient} = require('@slack/web-api');
+const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
 
-// Read a token from the environment variables
-const token = process.env.SLACK_TOKEN;
+const sendMessage = (message: any) => {
 
-// Initialize
-const web = new WebClient(token);
-
-const sendMessage = (message: ChatPostMessageArguments) => {
-
-    web.chat.postMessage(message)
-        .then((response: WebAPICallResult) => {
-            if (response.ok) {
+    axios.post(slackWebhookUrl, message)
+        .then((response) => {
+            if (response.data === 'ok') {
                 return {};
             } else {
-                throw new Error(response.error);
+                throw new Error(response.data);
             }
         });
 };

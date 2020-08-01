@@ -25,3 +25,8 @@ Feature: Lambda tests
     Given I have aws_cloudwatch_log_group defined
     Then it must contain name
     And its value must match the ".*test-function" regex
+
+  Scenario: Ensure all resources have tags
+    Given I have resource that supports tags defined
+    Then it must contain tags
+    And its value must not be null

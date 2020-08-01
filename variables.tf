@@ -14,7 +14,7 @@ variable "stage" {
 }
 
 variable "tags" {
-  type    = map(string)
+  type = map(string)
 }
 
 // lambda
@@ -34,7 +34,7 @@ variable "memory_size" {
 
 variable "timeout" {
   description = "timeout"
-  default = 30
+  default     = 30
 }
 
 variable "environment_variables" {
@@ -43,11 +43,7 @@ variable "environment_variables" {
   default     = {}
 }
 
-variable "slack_token" {
-  type = string
-}
-
-variable "slack_channel" {
+variable "slack_webhook_url" {
   type = string
 }
 

@@ -9,7 +9,6 @@
     "@semantic-release/release-notes-generator": "^9.0.0",
     "@types/aws-lambda": "^8.10.59",
     "@types/node": "^14.0.27",
-    "axios": "^0.19.2",
     "husky": "^4.2.1",
     "typescript": "^3.9.7"
   },
@@ -50,6 +49,6 @@
     ]
   },
   "dependencies": {
-    "@slack/web-api": "^5.11.0"
+    "axios": "^0.19.2"
   }
 }
