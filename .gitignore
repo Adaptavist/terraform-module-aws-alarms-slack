@@ -2,8 +2,7 @@
 *.backup
 .terraform
 .idea
-node_modules
+./node_modules
 *.zip
 /test/**/*.out
 /test/**/*.out.json
-/build/
