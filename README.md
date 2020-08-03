@@ -2,6 +2,7 @@
 
 This module creates an SNS Topic and an AWS Lambda function that forwards the message from the topic to the given Slack workspace.
 
+
 ## Variables
 
 | Name                           | Type    | Default | Required | Description                                                                
