@@ -38,7 +38,7 @@
       [
         "@semantic-release/exec",
         {
-          "successCmd": "git push --mirror git@github.com:Adaptavist/terraform-module-aws-lambda.git"
+          "successCmd": "git push --mirror git@github.com:Adaptavist/terraform-module-aws-alarms-slack.git"
         }
       ]
     ]
