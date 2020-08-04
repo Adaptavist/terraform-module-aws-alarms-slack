@@ -50,5 +50,6 @@
   },
   "dependencies": {
     "axios": "^0.19.2"
-  }
+  },
+  "license": "Apache-2.0"
 }
