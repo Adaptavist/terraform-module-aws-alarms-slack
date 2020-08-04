@@ -1,3 +1,10 @@
+# [1.3.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.2.0...v1.3.0) (2020-08-04)
+
+
+### Features
+
+* add LICENCE ([0d8b835](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/0d8b835141c8440c12233928d4a1f231a65fba7a))
+
 # [1.2.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.1.0...v1.2.0) (2020-08-03)
 
 
