@@ -1,4 +1,4 @@
-const regions = require('./regions.json')
+import regions from './regions.json';
 
 function list () {
 	return regions.filter((region: Region) => {

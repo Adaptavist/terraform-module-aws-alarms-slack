@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {Callback, Context, SNSEvent} from "aws-lambda";
 import {SNSEventRecord} from "aws-lambda/trigger/sns";
-import {lookup} from './aws/index'
+import {lookup} from './aws';
 
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
 
@@ -34,7 +34,7 @@ const processRecord = (record: SNSEventRecord) => {
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": `* ${subject}`,
+                            "text": `${subject}`,
                             "emoji": true
                         }
                     },

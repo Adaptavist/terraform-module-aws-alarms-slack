@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const index_1 = require("./aws/index");
+const aws_1 = require("./aws");
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
 const buildCloudWatchUrl = (alarmName, region) => {
-    const regionCode = index_1.lookup({ full_name: region });
+    const regionCode = aws_1.lookup({ full_name: region });
     return `https://${regionCode}.console.aws.amazon.com/cloudwatch/home?region=${regionCode}#alarmsV2:alarm/${alarmName}?`;
 };
 const sendMessage = (message) => {
@@ -33,7 +33,7 @@ const processRecord = (record) => {
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": `* ${subject}`,
+                            "text": `${subject}`,
                             "emoji": true
                         }
                     },
