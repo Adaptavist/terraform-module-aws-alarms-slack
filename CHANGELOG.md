@@ -1,3 +1,10 @@
+# [1.5.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.4.0...v1.5.0) (2020-08-05)
+
+
+### Features
+
+* include regions file; fix ts compilation for json ([b388570](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/b388570680200be065add833f1cf480cf62a150c))
+
 # [1.4.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.3.0...v1.4.0) (2020-08-05)
 
 
