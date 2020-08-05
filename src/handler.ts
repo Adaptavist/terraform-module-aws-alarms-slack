@@ -5,9 +5,9 @@ import {lookup} from './aws';
 
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
 
-const buildCloudWatchUrl = (alarmName: string, region: string) => {
-    const regionCode = lookup({full_name: region});
-    return `https://${regionCode}.console.aws.amazon.com/cloudwatch/home?region=${regionCode}#alarmsV2:alarm/${alarmName}?`
+const buildCloudWatchUrl = (alarmName: string, regionName: string) => {
+    const region = lookup({full_name: regionName});
+    return `https://${region?.code}.console.aws.amazon.com/cloudwatch/home?region=${region?.code}#alarmsV2:alarm/${alarmName}?`
 }
 
 const sendMessage = (message: any) => {
@@ -34,7 +34,7 @@ const processRecord = (record: SNSEventRecord) => {
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": `${subject}`,
+                            "text": `${encodeURIComponent(subject)}`,
                             "emoji": true
                         }
                     },

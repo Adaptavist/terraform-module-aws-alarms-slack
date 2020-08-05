@@ -6,7 +6,7 @@ function list () {
 	})
 }
 
-function lookup (opts: Options) {
+function lookup (opts: Options): Region | undefined {
 	if (opts.code) {
 		return regions.find((r: Region) => r.code === opts.code)
 	}
