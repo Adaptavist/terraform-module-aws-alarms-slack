@@ -1,3 +1,10 @@
+# [1.7.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.6.0...v1.7.0) (2020-08-05)
+
+
+### Features
+
+* fix header ([6a2bbb4](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/6a2bbb49129adf26980d481d4a3f4019fd2275c7))
+
 # [1.6.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.5.0...v1.6.0) (2020-08-05)
 
 
