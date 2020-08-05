@@ -1,8 +1,14 @@
 import axios from 'axios';
 import {Callback, Context, SNSEvent} from "aws-lambda";
 import {SNSEventRecord} from "aws-lambda/trigger/sns";
+import {lookup} from './aws/index'
 
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
+
+const buildCloudWatchUrl = (alarmName: string, region: string) => {
+    const regionCode = lookup({full_name: region});
+    return `https://${regionCode}.console.aws.amazon.com/cloudwatch/home?region=${regionCode}#alarmsV2:alarm/${alarmName}?`
+}
 
 const sendMessage = (message: any) => {
 
@@ -20,28 +26,63 @@ const processRecord = (record: SNSEventRecord) => {
     const subject = record.Sns.Subject;
     const message = JSON.parse(record.Sns.Message);
     return sendMessage({
-        text: subject,
-        channel: process.env.SLACK_CHANNEL || '',
-        attachments: [{
-            text: message.NewStateReason,
-            fields: [{
-                title: 'Time',
-                value: message.StateChangeTime,
-                short: true,
-            }, {
-                title: 'Alarm',
-                value: message.AlarmName,
-                short: true,
-            }, {
-                title: 'Account',
-                value: message.AWSAccountId,
-                short: true,
-            }, {
-                title: 'Region',
-                value: message.Region,
-                short: true,
-            }],
-        }],
+        "attachments": [
+            {
+                "color": "#CA0B00",
+                "blocks": [
+                    {
+                        "type": "header",
+                        "text": {
+                            "type": "plain_text",
+                            "text": `* ${subject}`,
+                            "emoji": true
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "plain_text",
+                            "text": message.NewStateReason
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "fields": [
+                            {
+                                "type": "mrkdwn",
+                                "text": `*Time* \n ${message.StateChangeTime}`
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": `*Alarm* \n ${message.AlarmName}`
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": `*Account* \n ${message.AWSAccountId}`
+                            },
+                            {
+                                "type": "mrkdwn",
+                                "text": `*Region* \n ${message.Region}`
+                            }
+                        ]
+                    },
+                    {
+                        "type": "actions",
+                        "elements": [
+                            {
+                                "type": "button",
+                                "text": {
+                                    "type": "plain_text",
+                                    "text": "View alarm",
+                                    "emoji": true
+                                },
+                                "url": buildCloudWatchUrl(message.AlarmName, message.Region)
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     });
 };
 

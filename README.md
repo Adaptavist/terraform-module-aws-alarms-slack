@@ -15,6 +15,7 @@ This module creates an SNS Topic and an AWS Lambda function that forwards the me
 | name                           | string  |         | ✓        | Name of the module / resources                         
 | stage                          | string  |         | ✓        | What stage are the resources for? staging, production? 
 | tags                           | map     |         | ✓        | Map of tags to be applied to all resources             
+| slack_webhook_url              | string  |         | ✓        | The Slack Webhook URL to which the formatted message is sent             
 
 ## Outputs
 
@@ -22,3 +23,8 @@ This module creates an SNS Topic and an AWS Lambda function that forwards the me
 | ----------------------- | ----------------------------------------------------------------- |
 | lambda_arn              | The ARN of the Lambda Function                                    |
 | alarms_topic_arn        | The ARN of the SNS topic                                          |
+
+## Slack message format
+The Slack message is formatted to match the following:
+
+![demo](https://raw.githubusercontent.com/Adaptavist/terraform-module-aws-alarms-slack/master/demo.png)
