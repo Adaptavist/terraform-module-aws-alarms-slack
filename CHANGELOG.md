@@ -1,3 +1,10 @@
+# [1.6.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.5.0...v1.6.0) (2020-08-05)
+
+
+### Features
+
+* fix region parsing; escape message title ([f2d8aef](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/f2d8aef97235c8e471799c0a660401c1c9d610c6))
+
 # [1.5.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.4.0...v1.5.0) (2020-08-05)
 
 
