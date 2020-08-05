@@ -33,7 +33,7 @@ const processRecord = (record) => {
                         "type": "header",
                         "text": {
                             "type": "plain_text",
-                            "text": `${encodeURIComponent(subject)}`,
+                            "text": `${JSON.stringify(subject)}`,
                             "emoji": true
                         }
                     },
