@@ -1,3 +1,10 @@
+# [1.9.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.8.0...v1.9.0) (2020-10-09)
+
+
+### Features
+
+* terraform 13 support ([63184f9](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/63184f9179779a3c533054854781e98e92e8041a))
+
 # [1.8.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.7.0...v1.8.0) (2020-08-05)
 
 
