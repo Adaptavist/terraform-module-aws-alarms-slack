@@ -18,9 +18,9 @@ module "aws-lambda" {
   handler   = "handler.event"
   runtime   = "nodejs12.x"
   timeout   = 30
-  namespace = var.namespace
-  name      = var.name
-  stage     = var.stage
+  namespace = module.labels.namespace
+  name      = module.labels.name
+  stage     = module.labels.stage
   tags      = module.labels.tags
 }
 
