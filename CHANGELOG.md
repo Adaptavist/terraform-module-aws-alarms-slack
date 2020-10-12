@@ -1,3 +1,10 @@
+# [1.10.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.9.0...v1.10.0) (2020-10-12)
+
+
+### Features
+
+* adding labels module ([6f648e0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/6f648e0bf79607fa144fe23f739ab98e1264a60a))
+
 # [1.9.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.8.0...v1.9.0) (2020-10-09)
 
 
