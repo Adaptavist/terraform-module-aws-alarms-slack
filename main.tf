@@ -1,6 +1,6 @@
 module "aws-lambda" {
   source          = "Adaptavist/aws-lambda/module"
-  version         = "1.4.0"
+  version         = "1.5.0"
   function_name   = var.function_name
   description     = var.description
   lambda_code_dir = "${path.module}/build"
