@@ -7,11 +7,12 @@ module "labels" {
 }
 
 module "aws-lambda" {
-  source          = "Adaptavist/aws-lambda/module"
-  version         = "1.5.0"
-  function_name   = var.function_name
-  description     = var.description
-  lambda_code_dir = "${path.module}/build"
+  source                             = "Adaptavist/aws-lambda/module"
+  version                            = "1.7.1"
+  function_name                      = var.function_name
+  disable_label_function_name_prefix = true
+  description                        = var.description
+  lambda_code_dir                    = "${path.module}/build"
   environment_variables = {
     SLACK_WEBHOOK_URL : var.slack_webhook_url
   }
