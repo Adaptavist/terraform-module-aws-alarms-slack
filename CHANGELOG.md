@@ -1,3 +1,10 @@
+# [1.12.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.11.0...v1.12.0) (2020-12-14)
+
+
+### Features
+
+* using simple lambda function name ([aa2a7d7](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/aa2a7d7eb9fb7f68f1064f4353e383200383c6f7))
+
 # [1.11.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.10.0...v1.11.0) (2020-10-14)
 
 
