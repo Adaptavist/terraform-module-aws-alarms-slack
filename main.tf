@@ -8,9 +8,10 @@ module "labels" {
 
 module "aws-lambda" {
   source                             = "Adaptavist/aws-lambda/module"
-  version                            = "1.7.1"
+  version                            = "1.8.0"
   function_name                      = var.function_name
   disable_label_function_name_prefix = true
+  include_region                     = var.include_region
   description                        = var.description
   lambda_code_dir                    = "${path.module}/build"
   environment_variables = {
