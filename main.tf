@@ -10,7 +10,7 @@ module "aws-lambda" {
   source                             = "Adaptavist/aws-lambda/module"
   version                            = "1.8.0"
   function_name                      = var.function_name
-  disable_label_function_name_prefix = true
+  disable_label_function_name_prefix = false
   include_region                     = var.include_region
   description                        = var.description
   lambda_code_dir                    = "${path.module}/build"
@@ -27,7 +27,8 @@ module "aws-lambda" {
 }
 
 resource "aws_sns_topic" "alarm" {
-  name            = "${module.labels.id}-${var.function_name}"
+  # name            = "${module.labels.id}-${var.function_name}" //this result in topic recreation (need to recreate subcriptions if deleted)
+    name            = "${var.function_name}-alarm-topic"
   delivery_policy = file("${path.module}/templates/aws_sns_topic.delivery_policy.json")
   tags            = module.labels.tags
 }
