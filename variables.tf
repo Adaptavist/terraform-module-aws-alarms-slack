@@ -17,6 +17,13 @@ variable "tags" {
   type = map(string)
 }
 
+variable "include_region" {
+  type    = bool
+  default = false
+
+  description = "If set to true the current providers region will be appended to any global AWS resources such as IAM roles"
+}
+
 // lambda
 
 variable "function_name" {

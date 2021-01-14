@@ -1,5 +1,4 @@
 terraform {
-  required_version = "~> 0.12.0"
 
   backend "local" {
     path = "terraform.tfstate"
@@ -18,7 +17,14 @@ module "this" {
   description   = "test hello world lambda"
   timeout       = 3
   tags = {
-    test : "tag"
+    "Avst:BusinessUnit" : "product"
+    "Avst:Product" : "foo"
+    "Avst:Service" : "infra"
+    "Avst:Stage:Name" : "dev"
+    "Avst:Stage:Type" : "development"
+    "Avst:CostCenter" : "foo"
+    "Avst:Project" : "foo"
+    "Avst:Team" : "foo"
   }
   slack_webhook_url = "https://techno.techno.techno"
 }
