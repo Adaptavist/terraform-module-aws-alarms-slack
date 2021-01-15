@@ -1,25 +1,36 @@
+module "labels" {
+  source    = "git::https://github.com/cloudposse/terraform-terraform-label.git?ref=tags/0.5.0"
+  namespace = var.namespace
+  stage     = var.stage
+  name      = var.name
+  tags      = var.tags
+}
+
 module "aws-lambda" {
-  source          = "Adaptavist/aws-lambda/module"
-  version         = "1.2.0"
-  function_name   = var.function_name
-  description     = var.description
-  lambda_code_dir = "${path.module}/build"
+  source                             = "Adaptavist/aws-lambda/module"
+  version                            = "1.8.0"
+  function_name                      = var.function_name
+  disable_label_function_name_prefix = false
+  include_region                     = var.include_region
+  description                        = var.description
+  lambda_code_dir                    = "${path.module}/build"
   environment_variables = {
     SLACK_WEBHOOK_URL : var.slack_webhook_url
   }
   handler   = "handler.event"
   runtime   = "nodejs12.x"
   timeout   = 30
-  namespace = var.namespace
-  name      = var.name
-  stage     = var.stage
-  tags      = var.tags
+  namespace = module.labels.namespace
+  name      = module.labels.name
+  stage     = module.labels.stage
+  tags      = module.labels.tags
 }
 
 resource "aws_sns_topic" "alarm" {
-  name            = "${var.function_name}-alarm-topic"
+  # name            = "${module.labels.id}-${var.function_name}" //this result in topic recreation (need to recreate subcriptions if deleted)
+    name            = "${var.function_name}-alarm-topic"
   delivery_policy = file("${path.module}/templates/aws_sns_topic.delivery_policy.json")
-  tags            = var.tags
+  tags            = module.labels.tags
 }
 
 resource "aws_sns_topic_subscription" "sns-alarm" {

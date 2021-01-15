@@ -1,3 +1,38 @@
+# [1.13.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.12.0...v1.13.0) (2021-01-12)
+
+
+### Features
+
+* upgraded aws-lambda module ([2e601b9](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/2e601b9c2060da00987eb49188bee029a24845ad))
+
+# [1.12.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.11.0...v1.12.0) (2020-12-14)
+
+
+### Features
+
+* using simple lambda function name ([aa2a7d7](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/aa2a7d7eb9fb7f68f1064f4353e383200383c6f7))
+
+# [1.11.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.10.0...v1.11.0) (2020-10-14)
+
+
+### Features
+
+* lambda module version bump ([e2ba690](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/e2ba690581dec3b672ccf04c577daa0e4a9099f1))
+
+# [1.10.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.9.0...v1.10.0) (2020-10-12)
+
+
+### Features
+
+* adding labels module ([6f648e0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/6f648e0bf79607fa144fe23f739ab98e1264a60a))
+
+# [1.9.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.8.0...v1.9.0) (2020-10-09)
+
+
+### Features
+
+* terraform 13 support ([63184f9](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/63184f9179779a3c533054854781e98e92e8041a))
+
 # [1.8.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.7.0...v1.8.0) (2020-08-05)
 
 
