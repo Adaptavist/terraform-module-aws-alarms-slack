@@ -1,3 +1,10 @@
+## [1.13.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.13.0...v1.13.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* using the latest lambda module ([455b49a](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/455b49a3327775a70fe1fcb523f0293f559dc3f9))
+
 # [1.13.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.12.0...v1.13.0) (2021-01-12)
 
 
