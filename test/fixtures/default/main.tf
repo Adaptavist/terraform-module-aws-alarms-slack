@@ -27,5 +27,6 @@ module "this" {
     "Avst:Team" : "foo"
   }
   slack_webhook_url = "https://techno.techno.techno"
+  aws_region        = "us-west-2"
 }
 
