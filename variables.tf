@@ -24,6 +24,11 @@ variable "include_region" {
   description = "If set to true the current providers region will be appended to any global AWS resources such as IAM roles"
 }
 
+variable "aws_region" {
+  type        = string
+  description = "AWS Region"
+}
+
 // lambda
 
 variable "function_name" {
