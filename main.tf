@@ -8,7 +8,7 @@ module "labels" {
 
 module "aws-lambda" {
   source                             = "Adaptavist/aws-lambda/module"
-  version                            = "1.8.1"
+  version                            = "1.10.0"
   function_name                      = var.function_name
   disable_label_function_name_prefix = true
   include_region                     = var.include_region
@@ -17,13 +17,14 @@ module "aws-lambda" {
   environment_variables = {
     SLACK_WEBHOOK_URL : var.slack_webhook_url
   }
-  handler   = "handler.event"
-  runtime   = "nodejs12.x"
-  timeout   = 30
-  namespace = module.labels.namespace
-  name      = module.labels.name
-  stage     = module.labels.stage
-  tags      = module.labels.tags
+  handler    = "handler.event"
+  runtime    = "nodejs12.x"
+  timeout    = 30
+  namespace  = module.labels.namespace
+  name       = module.labels.name
+  stage      = module.labels.stage
+  tags       = module.labels.tags
+  aws_region = var.aws_region
 }
 
 resource "aws_sns_topic" "alarm" {
