@@ -1,3 +1,10 @@
+# [1.14.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.13.1...v1.14.0) (2021-04-19)
+
+
+### Features
+
+* using the latest lambda module, region is now mandatory variable ([c4a1e6f](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/c4a1e6fad17fabf661791a694798866acf8cc850))
+
 ## [1.13.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.13.0...v1.13.1) (2021-02-26)
 
 
