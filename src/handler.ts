@@ -58,7 +58,15 @@ const processRecord = (record: SNSEventRecord) => {
                             },
                             {
                                 "type": "mrkdwn",
-                                "text": `*Account* \n ${message.AWSAccountId}`
+                                "text": `*Service* \n ${process.env.DISPLAY_NAME} (${process.env.STAGE})`
+                            },
+                            // {
+                            //     "type": "mrkdwn",
+                            //     "text": `*Origin* \n ${message.AWSAccountId}`
+                            // },
+                            {
+                                "type": "mrkdwn",
+                                "text": `*Account ID* \n ${message.AWSAccountId}`
                             },
                             {
                                 "type": "mrkdwn",

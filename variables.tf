@@ -29,6 +29,12 @@ variable "aws_region" {
   description = "AWS Region"
 }
 
+variable "display_service_name" {
+  type     = string
+  description = "the service using this module ie: Lifecycle Service"
+  default  = "Missing Variable: Set `display_service_name` variable"
+}
+
 // lambda
 
 variable "function_name" {
