@@ -62,7 +62,6 @@ variable "slack_webhook_url" {
 variable "display_service_name" {
   type        = string
   description = "the service using this module ie: Lifecycle Service"
-  default     = "Not Set: Set `display_service_name` variable"
 }
 
 
