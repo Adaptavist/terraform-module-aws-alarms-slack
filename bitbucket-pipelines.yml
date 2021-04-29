@@ -6,6 +6,7 @@ definitions:
     script:
       - terraform fmt -check -recursive -diff
       - yarn install
+      - yarn build
       - (cd test/fixtures/default &&
         terraform init &&
         AWS_DEFAULT_REGION=us-east-1

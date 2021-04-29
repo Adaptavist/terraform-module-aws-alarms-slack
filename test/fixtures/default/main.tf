@@ -26,7 +26,8 @@ module "this" {
     "Avst:Project" : "foo"
     "Avst:Team" : "foo"
   }
-  slack_webhook_url = "https://techno.techno.techno"
-  aws_region        = "us-west-2"
+  slack_webhook_url    = "https://techno.techno.techno"
+  aws_region           = "us-west-2"
+  display_service_name = "Testing Service"
 }
 
