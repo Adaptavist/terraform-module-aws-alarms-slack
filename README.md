@@ -4,19 +4,19 @@ This module creates an SNS Topic and an AWS Lambda function that forwards the me
 
 ## Variables
 
-| Name                           | Type    | Default | Required | Description                                                                
-| ------------------------------ | ------- | ------- | -------- | -------------------------------------------------------------------------- 
-| function_name                  | string  |         | ✓        | A unique name for the lambda function                                      
-| description                    | string  |         | ✓        | A description of the lambda function                                       
-| memory_size                    | integer | 128     |          | Amount of memory in MB your Lambda Function can use at runtime             
-| reserved_concurrent_executions | string  | -1      |          | The amount of reserved concurrent executions for this lambda function. A value of 0 disables lambda from being triggered and -1 removes any concurrency limitations.
-| timeout                        | integer | 30      |          | timeout                                                                    
-| namespace                      | string  |         | ✓        | Namespace used for labeling resources                  
-| name                           | string  |         | ✓        | Name of the module / resources                         
-| stage                          | string  |         | ✓        | What stage are the resources for? staging, production? 
-| tags                           | map     |         | ✓        | Map of tags to be applied to all resources             
-| slack_webhook_url              | string  |         | ✓        | The Slack Webhook URL to which the formatted message is sent
-| display_service_name           | string  |         | ✓        | A friendly name of the service ie: Lifecycle Service             
+| Name                           | Type    | Default                                      | Required | Description                                                                                                                                                          |
+| ------------------------------ | ------- | -------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| function_name                  | string  |                                              | ✓       | A unique name for the lambda function                                                                                                                                |
+| description                    | string  |                                              | ✓       | A description of the lambda function                                                                                                                                 |
+| memory_size                    | integer | 128                                          |          | Amount of memory in MB your Lambda Function can use at runtime                                                                                                       |
+| reserved_concurrent_executions | string  | -1                                           |          | The amount of reserved concurrent executions for this lambda function. A value of 0 disables lambda from being triggered and -1 removes any concurrency limitations. |
+| timeout                        | integer | 30                                           |          | timeout                                                                                                                                                              |
+| namespace                      | string  |                                              | ✓       | Namespace used for labeling resources                                                                                                                                |
+| name                           | string  |                                              | ✓       | Name of the module / resources                                                                                                                                       |
+| stage                          | string  |                                              | ✓       | What stage are the resources for? staging, production?                                                                                                               |
+| tags                           | map     |                                              | ✓       | Map of tags to be applied to all resources                                                                                                                           |
+| slack_webhook_url              | string  |                                              | ✓       | The Slack Webhook URL to which the formatted message is sent                                                                                                         |
+| display_service_name           | string  | Not Set: Set `display_service_name` variable |          | A friendly name of the service ie: Lifecycle Service                                                                                                                 |
 
 ## Outputs
 
