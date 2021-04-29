@@ -16,8 +16,8 @@ module "aws-lambda" {
   lambda_code_dir                    = "${path.module}/build"
   environment_variables = {
     SLACK_WEBHOOK_URL : var.slack_webhook_url
-    DISPLAY_NAME      : var.display_service_name
-    STAGE             : var.stage
+    DISPLAY_NAME : var.display_service_name
+    STAGE : var.stage
   }
   handler    = "handler.event"
   runtime    = "nodejs12.x"
