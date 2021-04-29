@@ -15,7 +15,8 @@ This module creates an SNS Topic and an AWS Lambda function that forwards the me
 | name                           | string  |         | ✓        | Name of the module / resources                         
 | stage                          | string  |         | ✓        | What stage are the resources for? staging, production? 
 | tags                           | map     |         | ✓        | Map of tags to be applied to all resources             
-| slack_webhook_url              | string  |         | ✓        | The Slack Webhook URL to which the formatted message is sent             
+| slack_webhook_url              | string  |         | ✓        | The Slack Webhook URL to which the formatted message is sent
+| display_service_name           | string  |         | ✓        | A friendly name of the service ie: Lifecycle Service             
 
 ## Outputs
 

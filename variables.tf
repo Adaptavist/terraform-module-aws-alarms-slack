@@ -29,11 +29,6 @@ variable "aws_region" {
   description = "AWS Region"
 }
 
-variable "display_service_name" {
-  type        = string
-  description = "the service using this module ie: Lifecycle Service"
-  default     = "Missing Variable: Set `display_service_name` variable"
-}
 
 // lambda
 
@@ -63,6 +58,11 @@ variable "environment_variables" {
 
 variable "slack_webhook_url" {
   type = string
+}
+variable "display_service_name" {
+  type        = string
+  description = "the service using this module ie: Lifecycle Service"
+  default     = "Not Set: Set `display_service_name` variable"
 }
 
 
