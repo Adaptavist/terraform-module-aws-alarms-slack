@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# disable in CI env
+[ -n "$CI" ] && exit 0
+# lint commits
+. "$(dirname "$0")/_/husky.sh"
+
+npx --no-install commitlint --edit "$1"

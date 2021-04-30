@@ -9,22 +9,19 @@
     "@semantic-release/release-notes-generator": "^9.0.0",
     "@types/aws-lambda": "^8.10.59",
     "@types/node": "^14.0.27",
-    "husky": "^4.2.1",
+    "commitizen": "^4.2.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^6.0.0",
     "typescript": "^3.9.7"
   },
   "scripts": {
+    "prepare": "husky install",
+    "cm": "cz",
     "check": "terraform fmt -check -recursive -diff",
     "format": "terraform fmt -recursive -diff",
     "test": "cd test && go test",
     "build": "tsc",
     "build:dependencies": "yarn install --production --modules-folder ./build/node_modules"
-  },
-  "husky": {
-    "skipCI": true,
-    "hooks": {
-      "pre-commit": "terraform fmt -check -recursive -diff",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "release": {
     "branches": [
@@ -51,5 +48,10 @@
   "dependencies": {
     "axios": "^0.19.2"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
