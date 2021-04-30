@@ -16,7 +16,7 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "cm": "cz",
+    "commit": "cz",
     "check": "terraform fmt -check -recursive -diff",
     "format": "terraform fmt -recursive -diff",
     "test": "cd test && go test",

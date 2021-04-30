@@ -1,5 +1,7 @@
 # AWS Slack Alarm Notifications
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
 This module creates an SNS Topic and an AWS Lambda function that forwards the message from the topic to the given Slack workspace.
 
 ## Variables
