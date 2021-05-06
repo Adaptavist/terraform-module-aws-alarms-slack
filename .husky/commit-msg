@@ -5,4 +5,4 @@
 # lint commits
 . "$(dirname "$0")/_/husky.sh"
 
-npx --no-install commitlint --edit "$1"
+yarn commitlint --edit "$1"
