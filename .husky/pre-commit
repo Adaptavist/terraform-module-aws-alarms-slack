@@ -1,0 +1,7 @@
+#!/bin/sh
+# disable in CI env
+[ -n "$CI" ] && exit 0
+# format terraform files
+. "$(dirname "$0")/_/husky.sh"
+
+terraform fmt -recursive -diff
