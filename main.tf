@@ -30,9 +30,11 @@ module "aws-lambda" {
 }
 
 resource "aws_sns_topic" "alarm" {
-  name            = "${module.labels.id}-${var.function_name}"
-  delivery_policy = file("${path.module}/templates/aws_sns_topic.delivery_policy.json")
-  tags            = module.labels.tags
+  name              = "${module.labels.id}-${var.function_name}"
+  delivery_policy   = file("${path.module}/templates/aws_sns_topic.delivery_policy.json")
+  kms_master_key_id = "alias/aws/sns"
+
+  tags = module.labels.tags
 }
 
 resource "aws_sns_topic_subscription" "sns-alarm" {
