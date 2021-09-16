@@ -6,6 +6,8 @@ module "labels" {
   tags      = var.tags
 }
 
+data "aws_caller_identity" "this" {}
+
 module "aws-lambda" {
   source                             = "Adaptavist/aws-lambda/module"
   version                            = "1.10.1"
@@ -29,13 +31,66 @@ module "aws-lambda" {
   aws_region = var.aws_region
 }
 
+resource "aws_kms_key" "sns" {
+  description             = "Slack notification SNS topic encryption"
+  policy                  = data.aws_iam_policy_document.sns_kms.json
+  deletion_window_in_days = 10
+  tags                    = module.labels.tags
+}
+
+data "aws_iam_policy_document" "sns_kms" {
+  statement {
+    sid    = "cloudwatch"
+    effect = "Allow"
+    actions = [
+      "kms:Decrypt",
+      "kms:GenerateDataKey*"
+    ]
+    resources = ["*"]
+    principals {
+      identifiers = ["cloudwatch.amazonaws.com"]
+      type        = "Service"
+    }
+  }
+  statement {
+    sid    = "admin"
+    effect = "Allow"
+    actions = [
+      "kms:Create*",
+      "kms:Describe*",
+      "kms:Enable*",
+      "kms:List*",
+      "kms:Put*",
+      "kms:Update*",
+      "kms:Revoke*",
+      "kms:Disable*",
+      "kms:Get*",
+      "kms:Delete*",
+      "kms:ScheduleKeyDeletion",
+      "kms:CancelKeyDeletion"
+    ]
+    resources = ["*"]
+    principals {
+      identifiers = ["arn:aws:iam::${data.aws_caller_identity.this.account_id}:root"]
+      type        = "AWS"
+    }
+  }
+}
+
+resource "aws_kms_alias" "sns" {
+  target_key_id = aws_kms_key.sns.id
+  name_prefix   = "alias/sns-kms"
+}
+
 resource "aws_sns_topic" "alarm" {
   name              = "${module.labels.id}-${var.function_name}"
   delivery_policy   = file("${path.module}/templates/aws_sns_topic.delivery_policy.json")
-  kms_master_key_id = "alias/aws/sns"
+  kms_master_key_id = aws_kms_key.sns.id
 
   tags = module.labels.tags
 }
+
+
 
 resource "aws_sns_topic_subscription" "sns-alarm" {
   topic_arn = aws_sns_topic.alarm.arn
