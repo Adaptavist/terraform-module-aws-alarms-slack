@@ -1,3 +1,10 @@
+## [2.0.3](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.2...v2.0.3) (2021-09-16)
+
+
+### Bug Fixes
+
+* allowing cloudwatch alarm to write to SNS ([7fd3a94](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/7fd3a94a9e596aff2edac425ce9d727eea6081c3))
+
 ## [2.0.2](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.1...v2.0.2) (2021-05-24)
 
 
