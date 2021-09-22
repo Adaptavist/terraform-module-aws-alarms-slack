@@ -1,3 +1,57 @@
+## [2.0.3](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.2...v2.0.3) (2021-09-16)
+
+
+### Bug Fixes
+
+* allowing cloudwatch alarm to write to SNS ([7fd3a94](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/7fd3a94a9e596aff2edac425ce9d727eea6081c3))
+
+## [2.0.2](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.1...v2.0.2) (2021-05-24)
+
+
+### Bug Fixes
+
+*  using checkov and semantic release image ([0bec1b7](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/0bec1b77779f9b98223d8bc7e7932c1f1adafa62))
+
+## [2.0.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.0...v2.0.1) (2021-05-10)
+
+
+### Bug Fixes
+
+* use the latest aws-lambda/module version ([d291118](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/d291118a5e775cd089324d8441e83a29361860de))
+
+# [2.0.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.14.0...v2.0.0) (2021-04-29)
+
+
+### Bug Fixes
+
+* run terraform format command ([59b985a](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/59b985a9e73c0ba3bfb481c1cb80892be8b0a314))
+
+
+### Features
+
+* add service display name ([fdbf28f](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/fdbf28fe809763ee3d890c0f0d8f41e276716642))
+* change display_service_name variable to be required ([30f7b51](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/30f7b5119414f95caca07a76d96cca511bc08fe7))
+* display friendly service name in the slack notification ([a165c1e](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/a165c1e80b5adb231230f6499020700695de036c))
+
+
+### BREAKING CHANGES
+
+* display_service_name is now required
+
+# [1.14.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.13.1...v1.14.0) (2021-04-19)
+
+
+### Features
+
+* using the latest lambda module, region is now mandatory variable ([c4a1e6f](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/c4a1e6fad17fabf661791a694798866acf8cc850))
+
+## [1.13.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.13.0...v1.13.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* using the latest lambda module ([455b49a](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/455b49a3327775a70fe1fcb523f0293f559dc3f9))
+
 # [1.13.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v1.12.0...v1.13.0) (2021-01-12)
 
 

@@ -6,3 +6,5 @@
 *.zip
 /test/**/*.out
 /test/**/*.out.json
+node_modules
+.terraform.lock.hc

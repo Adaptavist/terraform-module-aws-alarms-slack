@@ -24,6 +24,12 @@ variable "include_region" {
   description = "If set to true the current providers region will be appended to any global AWS resources such as IAM roles"
 }
 
+variable "aws_region" {
+  type        = string
+  description = "AWS Region"
+}
+
+
 // lambda
 
 variable "function_name" {
@@ -52,6 +58,10 @@ variable "environment_variables" {
 
 variable "slack_webhook_url" {
   type = string
+}
+variable "display_service_name" {
+  type        = string
+  description = "the service using this module ie: Lifecycle Service"
 }
 
 
