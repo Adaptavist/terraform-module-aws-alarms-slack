@@ -1,3 +1,10 @@
+# [2.2.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.1.0...v2.2.0) (2021-10-08)
+
+
+### Features
+
+* updating lambda module ([d53ecc7](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/d53ecc7220dcae2e56ee1a681a1148775513d89b))
+
 # [2.1.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.0.3...v2.1.0) (2021-10-08)
 
 
