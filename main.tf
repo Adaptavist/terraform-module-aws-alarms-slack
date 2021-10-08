@@ -12,7 +12,7 @@ data "aws_caller_identity" "this" {}
 
 module "aws-lambda" {
   source                             = "Adaptavist/aws-lambda/module"
-  version                            = "1.10.1"
+  version                            = "1.11.0"
   function_name                      = var.function_name
   disable_label_function_name_prefix = true
   include_region                     = var.include_region
