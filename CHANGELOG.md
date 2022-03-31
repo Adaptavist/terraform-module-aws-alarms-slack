@@ -1,3 +1,10 @@
+## [2.2.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.0...v2.2.1) (2022-03-31)
+
+
+### Bug Fixes
+
+* allowing all kms actions for root account ([e283510](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/e2835102e3625a0d25c77a72e2fc1cdd8ed7376b))
+
 # [2.2.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.1.0...v2.2.0) (2021-10-08)
 
 
