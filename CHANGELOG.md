@@ -1,3 +1,10 @@
+## [2.2.2](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.1...v2.2.2) (2023-07-07)
+
+
+### Bug Fixes
+
+* Update lambda runtime from node 12 to 18 ([f2bf51e](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/f2bf51e568c48e535f3915688bfdd78b3874d977))
+
 ## [2.2.1](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.0...v2.2.1) (2022-03-31)
 
 
