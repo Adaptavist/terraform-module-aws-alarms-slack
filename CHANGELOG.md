@@ -1,3 +1,10 @@
+## [2.2.3](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.2...v2.2.3) (2023-07-10)
+
+
+### Bug Fixes
+
+* pass timeout variable to lambda module ([ef688fe](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/ef688fe3b6830ee64edc58a5062076f20e74afd2))
+
 ## [2.2.2](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.1...v2.2.2) (2023-07-07)
 
 
