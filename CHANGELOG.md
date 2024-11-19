@@ -1,3 +1,10 @@
+## [2.2.5](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.4...v2.2.5) (2024-11-19)
+
+
+### Bug Fixes
+
+* checkov fixes ([2514b11](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/2514b116c44418dad897acc3db72d15a292b16bc))
+
 ## [2.2.4](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.3...v2.2.4) (2023-07-10)
 
 
