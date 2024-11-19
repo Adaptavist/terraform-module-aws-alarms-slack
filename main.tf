@@ -1,5 +1,5 @@
 module "labels" {
-  source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=488ab91e34a24a86957e397d9f7262ec5925586a" # <-- version 0.25.0
+  source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=488ab91e34a24a86957e397d9f7262ec5925586a" # <- version 0.25.0
 
   namespace = var.namespace
   stage     = var.stage
@@ -10,7 +10,7 @@ module "labels" {
 data "aws_caller_identity" "this" {}
 
 module "aws-lambda" {
-  source = "git::https://github.com/Adaptavist/terraform-module-aws-lambda.git?ref=8431818596c983b5a0f7e414b482197f020b0ec1" # <-- version 1.35.3
+  source = "git::https://github.com/Adaptavist/terraform-module-aws-lambda.git?ref=8431818596c983b5a0f7e414b482197f020b0ec1" # <- version 1.35.3
 
   function_name                      = var.function_name
   disable_label_function_name_prefix = true
