@@ -1,3 +1,10 @@
+## [2.2.6](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.5...v2.2.6) (2024-11-19)
+
+
+### Bug Fixes
+
+* trigger new release ([990af1c](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/990af1cf71fdb2827200379a7b68ecc85ce41eac))
+
 ## [2.2.5](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.4...v2.2.5) (2024-11-19)
 
 
