@@ -41,7 +41,7 @@ variable "description" {
   description = "A description of the lambda function."
 }
 variable "memory_size" {
-  description = "Amount of memory in MB your Lambda Function can use at runtime"
+  description = "Amount of memory in MB your Lambda Function can use at runtime."
   default     = "128"
 }
 
