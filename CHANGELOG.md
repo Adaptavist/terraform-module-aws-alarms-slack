@@ -1,3 +1,10 @@
+## [2.2.9](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.8...v2.2.9) (2024-12-04)
+
+
+### Bug Fixes
+
+* lambda singing profile name ([f637ae9](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/f637ae93f8981c5c64ec45685d9d05f0344f2e94))
+
 ## [2.2.8](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.7...v2.2.8) (2024-11-26)
 
 
