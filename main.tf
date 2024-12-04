@@ -10,7 +10,7 @@ module "labels" {
 data "aws_caller_identity" "this" {}
 
 module "aws-lambda" {
-  source = "git::https://github.com/Adaptavist/terraform-module-aws-lambda.git?ref=8431818596c983b5a0f7e414b482197f020b0ec1" # <- version 1.35.3
+  source = "git::https://github.com/Adaptavist/terraform-module-aws-lambda.git?ref=426f499e647daa4a999226ea195355caeaf96dca" # <- version 1.35.4
 
   function_name                      = var.function_name
   disable_label_function_name_prefix = true
