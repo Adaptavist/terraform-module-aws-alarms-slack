@@ -1,3 +1,10 @@
+## [2.2.12](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.11...v2.2.12) (2025-02-03)
+
+
+### Bug Fixes
+
+* syntax warning ([e787e6d](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/e787e6dbd245e3857c97d270230e5a61648b2d79))
+
 ## [2.2.11](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.10...v2.2.11) (2025-02-03)
 
 
