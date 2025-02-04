@@ -1,3 +1,10 @@
+## [2.2.13](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.12...v2.2.13) (2025-02-04)
+
+
+### Bug Fixes
+
+* lambda iam role name ([63bf067](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/63bf06707e2c5f6f7ba50b1a717fc270d78bd09b))
+
 ## [2.2.12](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.11...v2.2.12) (2025-02-03)
 
 
