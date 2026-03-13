@@ -1,3 +1,10 @@
+## [2.2.14](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.13...v2.2.14) (2026-03-13)
+
+
+### Bug Fixes
+
+* Conditionally allow eventbridge to publish events ([6ee8d79](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/6ee8d79e8b8030e74d1680bb2b459662a9c3f10f))
+
 ## [2.2.13](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.12...v2.2.13) (2025-02-04)
 
 
