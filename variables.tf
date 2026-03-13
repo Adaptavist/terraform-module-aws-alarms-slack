@@ -64,5 +64,11 @@ variable "display_service_name" {
   description = "the service using this module ie: Lifecycle Service"
 }
 
+variable "enable_eventbridge" {
+  type        = bool
+  default     = false
+  description = "Whether to add the EventBridge publish permission to the SNS topic policy"
+}
+
 
 
