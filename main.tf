@@ -1,5 +1,12 @@
 data "aws_caller_identity" "current" {}
 
+locals {
+  kms_service_principals = concat(
+    ["cloudwatch.amazonaws.com"],
+    var.enable_eventbridge ? ["events.amazonaws.com"] : []
+  )
+}
+
 module "labels" {
   source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=488ab91e34a24a86957e397d9f7262ec5925586a" # <- version 0.25.0
 
@@ -51,7 +58,7 @@ data "aws_iam_policy_document" "sns_kms" {
     ]
     resources = ["*"]
     principals {
-      identifiers = ["cloudwatch.amazonaws.com"]
+      identifiers = local.kms_service_principals
       type        = "Service"
     }
   }
