@@ -1,3 +1,10 @@
+## [2.2.16](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.15...v2.2.16) (2026-03-17)
+
+
+### Bug Fixes
+
+* Conditionally add eventbridge to principals of SNS KMS key policy ([7754369](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/7754369359d4044422f0ffcb6edf5e4a328d8d3b))
+
 ## [2.2.15](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.14...v2.2.15) (2026-03-13)
 
 
