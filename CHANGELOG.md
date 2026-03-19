@@ -1,3 +1,10 @@
+## [2.2.17](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.16...v2.2.17) (2026-03-19)
+
+
+### Bug Fixes
+
+* Remove logging of CloudTrail events ([6e1fe05](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/6e1fe05f3f6100c90c94b8743d0b4833f2e0064f))
+
 ## [2.2.16](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.15...v2.2.16) (2026-03-17)
 
 
