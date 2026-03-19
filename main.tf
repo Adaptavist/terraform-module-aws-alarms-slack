@@ -1,12 +1,3 @@
-data "aws_caller_identity" "current" {}
-
-locals {
-  kms_service_principals = concat(
-    ["cloudwatch.amazonaws.com"],
-    var.enable_eventbridge ? ["events.amazonaws.com"] : []
-  )
-}
-
 module "labels" {
   source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=488ab91e34a24a86957e397d9f7262ec5925586a" # <- version 0.25.0
 
@@ -58,7 +49,7 @@ data "aws_iam_policy_document" "sns_kms" {
     ]
     resources = ["*"]
     principals {
-      identifiers = local.kms_service_principals
+      identifiers = ["cloudwatch.amazonaws.com"]
       type        = "Service"
     }
   }
@@ -89,60 +80,7 @@ resource "aws_sns_topic" "alarm" {
   tags = module.labels.tags
 }
 
-resource "aws_sns_topic_policy" "slack_notifications" {
-  arn    = aws_sns_topic.alarm.arn
-  policy = data.aws_iam_policy_document.sns_topic_policy.json
-}
 
-data "aws_iam_policy_document" "sns_topic_policy" {
-  statement {
-    sid    = "DefaultAccountAccess"
-    effect = "Allow"
-
-    principals {
-      type        = "AWS"
-      identifiers = ["*"]
-    }
-
-    actions = [
-      "SNS:GetTopicAttributes",
-      "SNS:SetTopicAttributes",
-      "SNS:AddPermission",
-      "SNS:RemovePermission",
-      "SNS:DeleteTopic",
-      "SNS:Subscribe",
-      "SNS:ListSubscriptionsByTopic",
-      "SNS:Publish",
-      "SNS:Receive"
-    ]
-
-    resources = [
-      aws_sns_topic.alarm.arn
-    ]
-
-    condition {
-      test     = "StringEquals"
-      variable = "AWS:SourceOwner"
-      values   = [data.aws_caller_identity.current.account_id]
-    }
-  }
-
-  dynamic "statement" {
-    for_each = var.enable_eventbridge ? [1] : []
-    content {
-      sid    = "AllowEventBridgePublish"
-      effect = "Allow"
-
-      principals {
-        type        = "Service"
-        identifiers = ["events.amazonaws.com"]
-      }
-
-      actions   = ["SNS:Publish"]
-      resources = [aws_sns_topic.alarm.arn]
-    }
-  }
-}
 
 resource "aws_sns_topic_subscription" "sns-alarm" {
   topic_arn = aws_sns_topic.alarm.arn
