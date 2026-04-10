@@ -4,6 +4,22 @@ import {SNSEventRecord} from "aws-lambda/trigger/sns";
 import {lookup} from './aws';
 
 const slackWebhookUrl = process.env.SLACK_WEBHOOK_URL || '';
+const alarmRunbookDefaultUrl = process.env.ALARM_RUNBOOK_URL || '';
+
+const parseRunbookMap = (): Record<string, string> => {
+    const raw = process.env.ALARM_RUNBOOK_MAP || '{}';
+    try {
+        const parsed = JSON.parse(raw);
+        if (parsed !== null && typeof parsed === 'object' && !Array.isArray(parsed)) {
+            return parsed as Record<string, string>;
+        }
+    } catch {
+        /* ignore */
+    }
+    return {};
+};
+
+const runbookUrlByAlarmName = parseRunbookMap();
 
 const buildCloudWatchUrl = (alarmName: string, regionName: string) => {
     const region = lookup({full_name: regionName});
@@ -25,6 +41,30 @@ const sendMessage = (message: any) => {
 const processRecord = (record: SNSEventRecord) => {
     const subject = record.Sns.Subject;
     const message = JSON.parse(record.Sns.Message);
+    const actionElements: object[] = [
+        {
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "View alarm",
+                "emoji": true
+            },
+            "url": buildCloudWatchUrl(message.AlarmName, message.Region)
+        }
+    ];
+    const runbookUrl = runbookUrlByAlarmName[message.AlarmName] || alarmRunbookDefaultUrl;
+    if (runbookUrl) {
+        actionElements.push({
+            "type": "button",
+            "text": {
+                "type": "plain_text",
+                "text": "View runbook",
+                "emoji": true
+            },
+            "url": runbookUrl
+        });
+    }
+
     return sendMessage({
         "attachments": [
             {
@@ -72,17 +112,7 @@ const processRecord = (record: SNSEventRecord) => {
                     },
                     {
                         "type": "actions",
-                        "elements": [
-                            {
-                                "type": "button",
-                                "text": {
-                                    "type": "plain_text",
-                                    "text": "View alarm",
-                                    "emoji": true
-                                },
-                                "url": buildCloudWatchUrl(message.AlarmName, message.Region)
-                            }
-                        ]
+                        "elements": actionElements
                     }
                 ]
             }

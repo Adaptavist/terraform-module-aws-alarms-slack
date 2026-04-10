@@ -64,5 +64,17 @@ variable "display_service_name" {
   description = "the service using this module ie: Lifecycle Service"
 }
 
+variable "alarm_runbook_url" {
+  type        = string
+  default     = ""
+  description = "Optional default runbook URL when no entry exists in alarm_runbook_urls for the firing alarm. Shown as a second action button; leave empty to omit unless the map supplies a URL."
+}
+
+variable "alarm_runbook_urls" {
+  type        = map(string)
+  default     = {}
+  description = "Map of CloudWatch alarm name (exact match to AlarmName in SNS) to alarm guide URL"
+}
+
 
 
