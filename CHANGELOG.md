@@ -1,3 +1,10 @@
+# [2.3.0](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.17...v2.3.0) (2026-04-14)
+
+
+### Features
+
+* add optional runbook url to alarm ([b5a771e](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/commits/b5a771e70b3ee47dcbca046c1485a61a0306f957))
+
 ## [2.2.17](http://bitbucket.org/adaptavistlabs/module-aws-alarms-slack/compare/v2.2.16...v2.2.17) (2026-03-19)
 
 
