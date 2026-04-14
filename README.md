@@ -19,6 +19,29 @@ This module creates an SNS Topic and an AWS Lambda function that forwards the me
 | tags                           | map     |         | ✓       | Map of tags to be applied to all resources                                                                                                                           |
 | slack_webhook_url              | string  |         | ✓       | The Slack Webhook URL to which the formatted message is sent                                                                                                         |
 | display_service_name           | string  |         | ✓       | A friendly name of the service ie: Lifecycle Service                                                                                                                 |
+| alarm_runbook_url        | string        | `""`      | no       | Default runbook URL for the optional **View runbook** button when the firing alarm is not listed in `alarm_runbook_urls` |
+| alarm_runbook_urls       | map(string)   | `{}`      | no       | Map of CloudWatch **alarm name** (exact match to `AlarmName` in the SNS payload) to runbook URL. Per-alarm URL takes precedence over `alarm_runbook_url`. To be used when multiple alarms use the same lambda. |
+
+## Runbook URLs
+
+Example module block with a default runbook and per-alarm overrides:
+
+```hcl
+module "alarm_slack" {
+  source = "git::https://github.com/Adaptavist/terraform-module-aws-alarms-slack.git?ref=x.y.z"
+
+  # ... other required arguments (namespace, stage, tags, aws_region, function_name, description, slack_webhook_url, display_service_name)
+
+  alarm_runbook_url = "https://wiki.example.com/team/on-call/runbooks"
+
+  alarm_runbook_urls = {
+    "joint-my-service-num-reqs-high"     = "https://wiki.example.com/runbooks/high-traffic"
+    "joint-my-service-conx-error-count"  = "https://wiki.example.com/runbooks/connection-errors"
+  }
+}
+```
+
+In this example `joint-my-service-num-reqs-high` and `joint-my-service-conx-error-count` will point to specific runbooks, and all other alarms point to the generic runbook.
 
 ## Outputs
 
